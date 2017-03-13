@@ -11,7 +11,7 @@
         // Define option defaults
         var defaults = {
             provide: 'GoogleMaps',
-            icon: '/Content/Images/cod30/deliver.png',
+            icon: 'icon-marker.png',
             mapId: "map",
             width: 600,
             height: 280,
