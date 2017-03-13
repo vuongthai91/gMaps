@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <title>Google Maps API v3 - Simple marker example
+    </title>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCVClxzD6PC1DW_Jb-GqW1_UeO4xBU3iGU&sensor=false&amp;libraries=places">
+    </script>
+    <script type="text/javascript" src="../gMaps.js">
+    </script>
+
+    </heaad>
+
+    <body>
+        <div id="map" style="width: 1000px; height: 500px">
+        </div>
+        <div id="logs">
+
+        </div>
+    </body </html>
+    <script type="text/javascript">
+        var waypoints = [];
+        var maps = new gMaps();
+        var myLatLng = new google.maps.LatLng(10.7785886, 106.66294909999999);
+        var picker = maps.addMarker(myLatLng, 'picker');
+        myLatLng = new google.maps.LatLng(10.9785886, 106.66294909999999);
+
+        var deliver = maps.addMarker(myLatLng, 'deliver');
+        maps.goMarker(picker.id);
+        console.log(deliver);
+
+        myLatLng = new google.maps.LatLng(10.8785886, 106.66294909999999);
+        var stopPoint = maps.addMarker(myLatLng, 'stopPoint');
+        console.log(stopPoint);
+
+        waypoints.push({
+            location: stopPoint.marker.position,
+            stopover: true
+        });
+        var callbackDistanceSuccess = function (result) {
+            console.log('callbackDistance:' + result);
+        }
+
+        maps.measureDistanceByMarker(picker.marker, deliver.marker, waypoints, callbackDistanceSuccess);
+    </script>
