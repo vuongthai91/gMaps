@@ -11,7 +11,7 @@
         // Define option defaults
         var defaults = {
             provide: 'GoogleMaps',
-            icon: 'icon-marker.png',
+            icon: 'icon-map.png',
             mapId: "map",
             width: 600,
             height: 280,
@@ -79,6 +79,9 @@
         //set icon    
         if (ensure(pathIcon)) {
             marker.setIcon(pathIcon);
+        }
+        else{
+             marker.setIcon(this.options.icon);
         }
 
         if (!ensure(moveToMarker) && moveToMarker) {

@@ -1,0 +1,23 @@
+{
+  "name": "gMaps",
+  "main": "gMaps.js",
+  "homepage": "https://github.com/vuongthai91/gMaps",
+  "authors": [
+    "Thai Vong <vuongthai4491@gmail.com>"
+  ],
+  "description": "Maps Utils for google maps",
+  "keywords": [
+    "Gmaps",
+    "google",
+    "maps"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

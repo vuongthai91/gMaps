@@ -7,6 +7,8 @@
     </script>
     <script type="text/javascript" src="../gMaps.js">
     </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js">
+    </script>
 
     </heaad>
 
@@ -27,17 +29,18 @@
         var deliver = maps.addMarker(myLatLng, 'deliver');
         maps.goMarker(picker.id);
         console.log(deliver);
-
+        $('#logs').append('deliver:'+deliver);
         myLatLng = new google.maps.LatLng(10.8785886, 106.66294909999999);
         var stopPoint = maps.addMarker(myLatLng, 'stopPoint');
         console.log(stopPoint);
-
+         $('#logs').append('stopPoint:'+stopPoint);
         waypoints.push({
             location: stopPoint.marker.position,
             stopover: true
         });
         var callbackDistanceSuccess = function (result) {
             console.log('callbackDistance:' + result);
+            $('#logs').append(result+'m');
         }
 
         maps.measureDistanceByMarker(picker.marker, deliver.marker, waypoints, callbackDistanceSuccess);
